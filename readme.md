@@ -15,25 +15,25 @@ The following are required to be downloaded for you to edit code, contribute, an
 - [Visual Studio Code (Optional)](https://code.visualstudio.com/download)
 
 - Git the repo using this command on your command line:
-'''git clone https://github.com/orbijo/Guidepost.git'''
+```git clone https://github.com/orbijo/Guidepost.git```
 
 Setup:
 
 - Access the folder via
-'''cd Guidepost'''
+```cd Guidepost```
 On the command line type the following:
 - Update package dependencies
-'''composer update'''
+```composer update```
 - Frontend Scaffolding
-'''npm install && npm run dev'''
+```npm install && npm run dev```
 - Run Apache and  MySQL in XAMPP and create your database
-- '''cp .env.example .env''' and change the environment variables
+- ```cp .env.example .env``` and change the environment variables in your new .env file
 - Generate tables and seeders
-'''php artisan migrate:fresh --seed'''
+```php artisan migrate:fresh --seed```
 - Serve the application
-'''php artisan serve'''
+```php artisan serve```
 
-You are now done! You can access the application using '''localhost:8000/'''
+You are now done! You can access the application using ```localhost:8000/```
 
 ## Guidepost Credits
 
