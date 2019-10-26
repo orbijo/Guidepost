@@ -1,0 +1,104 @@
+footer p {
+    margin: 8px 0 8px 0;
+}
+
+.nav-link:hover {
+    color: rgb(240, 45, 75) !important;
+}
+
+.article-img {
+    height: 100%;
+    width: 100%;
+}
+
+.fa {
+    color:  rgb(240, 45, 75) !important;
+}
+
+.navbar-brand img {
+    height: 25px;
+    width: 25px;
+    margin: 0 8px 0 8px;
+}
+
+.article {
+    margin-bottom: 32px;
+}
+
+.round{
+    border-radius: 25px;
+    padding: 2px 2px 2px 2px;
+}
+
+a{
+    color: rgb(240, 45, 75) !important;
+}
+
+.btn-link {
+    color: rgb(240, 45, 75) !important;
+}
+
+.signup {
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+.terms h1 {
+    padding-top: 0px;
+}
+
+.terms h3 {
+    padding-top: 60px;
+}
+
+.form-signin a {
+    display: inline-block;
+}
+
+.change {
+    border: 1px gray solid;
+    padding: 16px;
+    
+}
+
+.forgot {
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+.user {
+    height: 50px;
+    width: 50px;
+}
+
+.user-lg {
+    height: 150px;
+    width: 150px;
+}
+
+.comments {
+    font-size: 12px;
+}
+
+.comments .row {
+    padding-top: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comments .row:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.card .reply {
+    border: none;
+}
+
+.card .reply .card-body {
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card .card {
+    border: none;
+}

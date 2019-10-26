@@ -17,7 +17,7 @@ class CreateLocationUsersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('user_id');
-            $table->boolean('mod_status');
+            $table->boolean('mod_status')->default(0);
             $table->timestamps();
         });
     }

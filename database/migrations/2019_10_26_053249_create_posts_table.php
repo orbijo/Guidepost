@@ -19,7 +19,9 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('location_id');
-            $table->BigInteger('votes');
+            $table->string('img_url')->nullable();
+            $table->BigInteger('votes')->default(0);
+            $table->boolean('thread_status')->default(1);
             $table->timestamps();
         });
     }
