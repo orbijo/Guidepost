@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $posts = Post::with(['user', 'comments.comments' => function ($query) {
             $query->with('user')->orderBy('votes')->take(3);
-        }])->where('thread_status', 1)->get();
+        }])->where('thread_status', 1)->orderBy('updated_at', 'desc')->get();
         
         return view('home', ['posts' => $posts]);
     }

@@ -1,3 +1,7 @@
+body {
+    padding-top: 70px;
+}
+
 footer p {
     margin: 8px 0 8px 0;
 }
@@ -9,10 +13,6 @@ footer p {
 .article-img {
     height: 100%;
     width: 100%;
-}
-
-.fa {
-    color:  rgb(240, 45, 75) !important;
 }
 
 .navbar-brand img {
@@ -101,4 +101,30 @@ a{
 
 .card .card {
     border: none;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color: rgb(240, 45, 75);
+	color:#FFF !important;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top:22px;
+}
+
+.limit-h {
+    object-fit: cover;
+    max-height: 250px;
+}
+
+.btn .fa{
+    color: rgb(240, 45, 75);
 }

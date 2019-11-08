@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
+use Auth;
 use App\Comment;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,35 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'content' => 'required|string|max:525',
+            'pid' => 'nullable|integer',
+            'cid' => 'nullable|integer',
+        ]);
+
+        if($validation->fails()) {
+            return redirect('/post'.$request->pid)
+                ->withErrors($validation)
+                ->withInput();
+        }
+        $comment = new Comment;
+        
+        if($request->cid == 0){
+            $comment->comment_id = NULL;
+            $comment->post_id = $request->pid;
+        }
+        else {
+            $comment->comment_id = $request->cid;
+            $comment->post_id = NULL;
+        }
+        
+        $comment->user_id = Auth::user()->id;
+        $comment->content = trim($request->content);
+
+        if($comment->save()){        
+            return redirect()->back();
+        }
+        
     }
 
     /**

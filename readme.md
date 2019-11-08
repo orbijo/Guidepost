@@ -1,6 +1,6 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-## About Guidepost
+## About Guide
 
 Guidepost is a social media web application that focuses on disaster awareness and funding. Guidepost aims to let create a community where one can alert others, be informed, and help others through donations through posts that are timely, relevant, objective, and important. Guide, post, help - Guidepost Helps.
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
+use Auth;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,35 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'title' => 'required|string|max:128',
+            'location' => 'required|string|max:86',
+            'body' => 'required|string',
+            'image' => 'nullable|image',
+        ]);
+
+        if($validation->fails()) {
+            return redirect('/home')
+                ->withErrors($validation)
+                ->withInput();
+        }
+
+        if($request->image != NULL) {
+            $path = $request->file('image')->store('images');
+        }
+        else {
+            $path = NULL;
+        }
+
+        $post = new Post;
+        $post->title = trim($request->title);
+        $post->location_id = $request->location;
+        $post->body = trim($request->body);
+        $post->img_url = $path;
+        $post->user_id = Auth::user()->id;
+        if ($post->save()) {
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -44,9 +74,13 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $post = Post::with(['user', 'comments.comments' => function ($query) {
+            $query->with('user')->orderBy('votes');
+        }])->where('thread_status', 1)->where('id', $id)->first();
+
+        return view('posts.show', ['post' => $post]);
     }
 
     /**
